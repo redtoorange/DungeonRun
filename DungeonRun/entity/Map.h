@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Entity.h"
-#include "../TiledMapRenderer.h"
+#include "TiledMapRenderer.h"
 
 namespace Engine
 {

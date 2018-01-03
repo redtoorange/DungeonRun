@@ -37,12 +37,6 @@
     <Filter Include="Source Files\screens">
       <UniqueIdentifier>{deeeeadc-f863-4c6f-9677-6fe7fd350695}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\engine">
-      <UniqueIdentifier>{210fef42-6aa4-46ef-aae0-c51af6a1ab27}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\engine">
-      <UniqueIdentifier>{941a6a1e-6af7-4fd9-88ba-4eee012630d5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\util">
       <UniqueIdentifier>{02297dcb-8cf5-4eac-9afe-b2a427618160}</UniqueIdentifier>
     </Filter>
@@ -105,41 +99,41 @@
     <ClCompile Include="controller\PhysicsController.cpp">
       <Filter>Source Files\controller</Filter>
     </ClCompile>
-    <ClCompile Include="Screen.cpp">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="GameScreen.cpp">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="GameEngine.cpp">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyxml2.cpp">
-      <Filter>Source Files\util</Filter>
-    </ClCompile>
-    <ClCompile Include="TileSet.cpp">
-      <Filter>Source Files\tiled</Filter>
-    </ClCompile>
-    <ClCompile Include="TileSetTile.cpp">
-      <Filter>Source Files\tiled</Filter>
-    </ClCompile>
-    <ClCompile Include="TiledMap.cpp">
-      <Filter>Source Files\tiled</Filter>
-    </ClCompile>
-    <ClCompile Include="TiledMapLayer.cpp">
-      <Filter>Source Files\tiled</Filter>
-    </ClCompile>
-    <ClCompile Include="TiledMapTile.cpp">
-      <Filter>Source Files\tiled</Filter>
-    </ClCompile>
-    <ClCompile Include="TiledMapRenderer.cpp">
-      <Filter>Source Files\tiled</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2D.cpp">
-      <Filter>Source Files\util</Filter>
-    </ClCompile>
     <ClCompile Include="component\AnimatedSprite.cpp">
       <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="screens\GameScreen.cpp">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="screens\Screen.cpp">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="tiled\TiledMap.cpp">
+      <Filter>Source Files\tiled</Filter>
+    </ClCompile>
+    <ClCompile Include="tiled\TiledMapLayer.cpp">
+      <Filter>Source Files\tiled</Filter>
+    </ClCompile>
+    <ClCompile Include="tiled\TiledMapRenderer.cpp">
+      <Filter>Source Files\tiled</Filter>
+    </ClCompile>
+    <ClCompile Include="tiled\TiledMapTile.cpp">
+      <Filter>Source Files\tiled</Filter>
+    </ClCompile>
+    <ClCompile Include="tiled\TileSet.cpp">
+      <Filter>Source Files\tiled</Filter>
+    </ClCompile>
+    <ClCompile Include="tiled\TileSetTile.cpp">
+      <Filter>Source Files\tiled</Filter>
+    </ClCompile>
+    <ClCompile Include="util\GameEngine.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\tinyxml2.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Vector2D.cpp">
+      <Filter>Source Files\util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,41 +182,41 @@
     <ClInclude Include="controller\PhysicsController.h">
       <Filter>Header Files\controller</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files\screens</Filter>
-    </ClInclude>
-    <ClInclude Include="GameScreen.h">
-      <Filter>Header Files\screens</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEngine.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="tinyxml2.h">
-      <Filter>Header Files\util</Filter>
-    </ClInclude>
-    <ClInclude Include="TileSet.h">
-      <Filter>Header Files\tiled</Filter>
-    </ClInclude>
-    <ClInclude Include="TileSetTile.h">
-      <Filter>Header Files\tiled</Filter>
-    </ClInclude>
-    <ClInclude Include="TiledMapTile.h">
-      <Filter>Header Files\tiled</Filter>
-    </ClInclude>
-    <ClInclude Include="TiledMap.h">
-      <Filter>Header Files\tiled</Filter>
-    </ClInclude>
-    <ClInclude Include="TiledMapLayer.h">
-      <Filter>Header Files\tiled</Filter>
-    </ClInclude>
-    <ClInclude Include="TiledMapRenderer.h">
-      <Filter>Header Files\tiled</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2D.h">
-      <Filter>Header Files\util</Filter>
-    </ClInclude>
     <ClInclude Include="component\AnimatedSprite.h">
       <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="screens\GameScreen.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="screens\Screen.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="tiled\TiledMap.h">
+      <Filter>Header Files\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="tiled\TiledMapLayer.h">
+      <Filter>Header Files\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="tiled\TiledMapRenderer.h">
+      <Filter>Header Files\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="tiled\TiledMapTile.h">
+      <Filter>Header Files\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="tiled\TileSet.h">
+      <Filter>Header Files\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="tiled\TileSetTile.h">
+      <Filter>Header Files\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="util\GameEngine.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\tinyxml2.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Vector2D.h">
+      <Filter>Header Files\util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

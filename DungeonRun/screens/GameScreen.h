@@ -1,9 +1,9 @@
 #pragma once
 #include "Screen.h"
 
-#include "controller/CameraController.h"
-#include "controller/MouseController.h"
-#include "controller/PhysicsController.h"
+#include "CameraController.h"
+#include "MouseController.h"
+#include "PhysicsController.h"
 
 #include "Entity.h"
 #include "TiledMap.h"

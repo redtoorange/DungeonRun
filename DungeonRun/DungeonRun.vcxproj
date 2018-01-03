@@ -97,10 +97,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Programming\CPP\projects\DungeonRun\DungeonRun\tmxparser;D:\Programming\CPP\projects\DungeonRun\dep\include;D:\Programming\CPP\projects\DungeonRun\DungeonRun\entity;D:\Programming\CPP\projects\DungeonRun\DungeonRun\component;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\CPP\projects\DungeonRun\DungeonRun\screens;D:\Programming\CPP\projects\DungeonRun\DungeonRun\tiled;D:\Programming\CPP\projects\DungeonRun\DungeonRun\util;D:\Programming\CPP\projects\DungeonRun\DungeonRun\entity;D:\Programming\CPP\projects\DungeonRun\DungeonRun\controller;D:\Programming\CPP\projects\DungeonRun\DungeonRun\component;D:\Programming\CPP\projects\DungeonRun\libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Programming\CPP\projects\DungeonRun\dep\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Programming\CPP\projects\DungeonRun\libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Box2D-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -128,12 +128,12 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Programming\CPP\projects\DungeonRun\DungeonRun\tmxparser;D:\Programming\CPP\projects\DungeonRun\DungeonRun\entity;D:\Programming\CPP\projects\DungeonRun\DungeonRun\component;D:\Programming\CPP\projects\DungeonRun\dep\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Programming\CPP\projects\DungeonRun\DungeonRun\screens;D:\Programming\CPP\projects\DungeonRun\DungeonRun\tiled;D:\Programming\CPP\projects\DungeonRun\DungeonRun\util;D:\Programming\CPP\projects\DungeonRun\DungeonRun\entity;D:\Programming\CPP\projects\DungeonRun\DungeonRun\controller;D:\Programming\CPP\projects\DungeonRun\DungeonRun\component;D:\Programming\CPP\projects\DungeonRun\libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>D:\Programming\CPP\projects\DungeonRun\dep\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Programming\CPP\projects\DungeonRun\libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Box2D.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -154,18 +154,18 @@
     <ClCompile Include="entity\MapTile.cpp" />
     <ClCompile Include="entity\Player.cpp" />
     <ClCompile Include="entity\Wall.cpp" />
-    <ClCompile Include="GameEngine.cpp" />
-    <ClCompile Include="GameScreen.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Screen.cpp" />
-    <ClCompile Include="TiledMapRenderer.cpp" />
-    <ClCompile Include="TiledMapTile.cpp" />
-    <ClCompile Include="TiledMap.cpp" />
-    <ClCompile Include="TiledMapLayer.cpp" />
-    <ClCompile Include="TileSet.cpp" />
-    <ClCompile Include="TileSetTile.cpp" />
-    <ClCompile Include="tinyxml2.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="screens\GameScreen.cpp" />
+    <ClCompile Include="screens\Screen.cpp" />
+    <ClCompile Include="tiled\TiledMap.cpp" />
+    <ClCompile Include="tiled\TiledMapLayer.cpp" />
+    <ClCompile Include="tiled\TiledMapRenderer.cpp" />
+    <ClCompile Include="tiled\TiledMapTile.cpp" />
+    <ClCompile Include="tiled\TileSet.cpp" />
+    <ClCompile Include="tiled\TileSetTile.cpp" />
+    <ClCompile Include="util\GameEngine.cpp" />
+    <ClCompile Include="util\tinyxml2.cpp" />
+    <ClCompile Include="util\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="component\Component.h" />
@@ -184,17 +184,17 @@
     <ClInclude Include="entity\MapTile.h" />
     <ClInclude Include="entity\Player.h" />
     <ClInclude Include="entity\Wall.h" />
-    <ClInclude Include="GameEngine.h" />
-    <ClInclude Include="GameScreen.h" />
-    <ClInclude Include="Screen.h" />
-    <ClInclude Include="TiledMapRenderer.h" />
-    <ClInclude Include="TiledMapTile.h" />
-    <ClInclude Include="TiledMap.h" />
-    <ClInclude Include="TiledMapLayer.h" />
-    <ClInclude Include="TileSet.h" />
-    <ClInclude Include="TileSetTile.h" />
-    <ClInclude Include="tinyxml2.h" />
-    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="screens\GameScreen.h" />
+    <ClInclude Include="screens\Screen.h" />
+    <ClInclude Include="tiled\TiledMap.h" />
+    <ClInclude Include="tiled\TiledMapLayer.h" />
+    <ClInclude Include="tiled\TiledMapRenderer.h" />
+    <ClInclude Include="tiled\TiledMapTile.h" />
+    <ClInclude Include="tiled\TileSet.h" />
+    <ClInclude Include="tiled\TileSetTile.h" />
+    <ClInclude Include="util\GameEngine.h" />
+    <ClInclude Include="util\tinyxml2.h" />
+    <ClInclude Include="util\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
