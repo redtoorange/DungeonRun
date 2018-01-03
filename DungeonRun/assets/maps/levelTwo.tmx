@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="2017.07.25" orientation="orthogonal" renderorder="right-down" width="6" height="12" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" source="padded_bleed__tiles.tsx"/>
+ <layer name="Tile Layer 1" width="6" height="12">
+  <data encoding="csv">
+1,2,2,2,2,3,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+16,17,17,17,17,18,
+31,32,32,32,32,33
+</data>
+ </layer>
+</map>
