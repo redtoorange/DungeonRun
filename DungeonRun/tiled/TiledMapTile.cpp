@@ -24,6 +24,7 @@ namespace Engine
 		setOffset(offset);
 	}
 
+	//----------------------------------------------------------------------------------
 	TiledMapTile::TiledMapTile(const TiledMapTile& other)
 		: tileSetTile(other.tileSetTile), position(other.position), offset( other.offset), sprite(other.sprite)
 	{
@@ -32,11 +33,13 @@ namespace Engine
 #endif
 	}
 
+	//----------------------------------------------------------------------------------
 	void TiledMapTile::draw(sf::RenderWindow& window)
 	{
 		window.draw(sprite);
 	}
 
+	//----------------------------------------------------------------------------------
 	void TiledMapTile::initialize(const sf::Vector2f& pos, TileSetTile* ts, const sf::Vector2f& offset)
 	{
 #if DEBUG>0
@@ -54,21 +57,25 @@ namespace Engine
 		setOffset(offset);
 	}
 
+	//----------------------------------------------------------------------------------
 	TileSetTile* const& TiledMapTile::getTileSetTile() const
 	{
 		return tileSetTile;
 	}
 
+	//----------------------------------------------------------------------------------
 	const sf::Vector2f& TiledMapTile::getPosition() const
 	{
 		return position;
 	}
 
+	//----------------------------------------------------------------------------------
 	const sf::Sprite& TiledMapTile::getSprite() const
 	{
 		return sprite;
 	}
 
+	//----------------------------------------------------------------------------------
 	TiledMapTile::TiledMapTile()
 	{
 #if DEBUG>0
@@ -76,7 +83,7 @@ namespace Engine
 #endif
 	}
 
-
+	//----------------------------------------------------------------------------------
 	TiledMapTile::~TiledMapTile()
 	{
 #if DEBUG>0
@@ -84,6 +91,7 @@ namespace Engine
 #endif
 	}
 
+	//----------------------------------------------------------------------------------
 	void TiledMapTile::setOffset(const sf::Vector2f& offset)
 	{
 		this->offset = offset;

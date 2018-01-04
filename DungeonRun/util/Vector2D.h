@@ -14,8 +14,8 @@ namespace Engine
 		Vector2D(const sf::Vector2f& other);
 		Vector2D(const b2Vec2& other);
 
-		float x;
-		float y;
+		float x = 0;
+		float y = 0;
 
 
 		float length() const;

@@ -32,6 +32,7 @@ namespace Engine
 		mapLayers.push_back( move(l) );
 	}
 
+	//----------------------------------------------------------------------------------
 	TileSet* TiledMap::findTileSet(int gid)
 	{
 		for( auto& t : tileSets)
@@ -41,16 +42,19 @@ namespace Engine
 		return nullptr;
 	}
 
+	//----------------------------------------------------------------------------------
 	vector<unique_ptr<TiledMapLayer>>& TiledMap::getMapLayers()
 	{
 		return mapLayers;
 	}
 
+	//----------------------------------------------------------------------------------
 	vector<unique_ptr<TileSet>>& TiledMap::getTileSets()
 	{
 		return tileSets;
 	}
 
+	//----------------------------------------------------------------------------------
 	void TiledMap::setMapOffset(const sf::Vector2f& offset)
 	{
 		for( auto& l : mapLayers)

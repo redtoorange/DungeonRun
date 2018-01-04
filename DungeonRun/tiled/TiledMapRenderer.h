@@ -14,21 +14,29 @@ namespace Engine
 {
 	class TiledMap;
 
+	//	Class to help render a TiledMap to the buffer.  It is not the most efficient method of rendering,
+	//	but it is simple.
 	class TiledMapRenderer
 	{
 	public:
 		TiledMapRenderer() = default;
 		~TiledMapRenderer() = default;
 
+		//	Change the current map, apply the current offset to all Tile within that map
 		void setCurrentMap(TiledMap* map);
 		TiledMap* getCurrentMap();
 
+		//	Draw the entire map to the buffer
 		void renderMap(sf::RenderWindow& window);
+		
+		//	Draw a single layer to the window buffer
 		void renderLayer(sf::RenderWindow& window, int index);
 
+		//	Adjust the positional data of the Tile sprites for drawing
 		void setOffset( const sf::Vector2f& offset);
 
 	private:
+		//	Offset to use when drawing the Tile Sprites
 		sf::Vector2f offset;
 		Vector2D offset2;
 

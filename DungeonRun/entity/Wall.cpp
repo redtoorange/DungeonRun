@@ -10,6 +10,7 @@ namespace Engine
 		addComponent(new PhysicsComponent(this, physics, 10.0f, b2_dynamicBody));
 	}
 
+	//----------------------------------------------------------------------------------
 	Wall::~Wall()
 	{
 	}

@@ -16,13 +16,13 @@ namespace Engine
 			currentMap->setMapOffset(offset);
 	}
 
-
+	//----------------------------------------------------------------------------------
 	TiledMap* TiledMapRenderer::getCurrentMap()
 	{
 		return currentMap;
 	}
 
-
+	//----------------------------------------------------------------------------------
 	void TiledMapRenderer::renderMap(sf::RenderWindow& window)
 	{
 		if (!currentMap) return;
@@ -36,6 +36,7 @@ namespace Engine
 		}
 	}
 
+	//----------------------------------------------------------------------------------
 	void TiledMapRenderer::renderLayer(sf::RenderWindow& window, int index)
 	{
 		if( currentMap && index < currentMap->getMapLayers().size())
@@ -47,7 +48,7 @@ namespace Engine
 		}
 	}
 
-
+	//----------------------------------------------------------------------------------
 	void TiledMapRenderer::setOffset(const sf::Vector2f& offset)
 	{
 		if( currentMap )

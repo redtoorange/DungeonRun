@@ -7,11 +7,13 @@ namespace Engine
 
 	}
 
+	//----------------------------------------------------------------------------------
 	sf::IntRect* TileSetTile::getRect()
 	{
 		return &rect;
 	}
 
+	//----------------------------------------------------------------------------------
 	TileSet* TileSetTile::getTileSet()
 	{
 		return tileset;

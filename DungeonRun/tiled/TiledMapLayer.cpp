@@ -17,6 +17,7 @@ namespace Engine
 		std::cout << "Tile Count: " << tiles.size() << std::endl;
 	}
 
+	//----------------------------------------------------------------------------------
 	void TiledMapLayer::parseTiledMap(tinyxml2::XMLElement* layer, TiledMap* map, const sf::Vector2f& offset)
 	{
 		owningMap = map;
@@ -61,7 +62,7 @@ namespace Engine
 		}
 	}
 
-
+	//----------------------------------------------------------------------------------
 	TiledMapLayer::TiledMapLayer()
 	{
 #if DEBUG>0
@@ -69,6 +70,7 @@ namespace Engine
 #endif
 	}
 
+	//----------------------------------------------------------------------------------
 	TiledMapLayer::TiledMapLayer(const TiledMapLayer& other)
 		: owningMap(other.owningMap),
 		name(other.name),
@@ -84,6 +86,7 @@ namespace Engine
 		}
 	}
 
+	//----------------------------------------------------------------------------------
 	TiledMapLayer& TiledMapLayer::operator=(const TiledMapLayer& other)
 	{
 #if DEBUG>0
@@ -104,12 +107,13 @@ namespace Engine
 		return *this;
 	}
 
-
+	//----------------------------------------------------------------------------------
 	std::vector<TiledMapTile>& TiledMapLayer::getTiles()
 	{
 		return tiles;
 	}
 
+	//----------------------------------------------------------------------------------
 	void TiledMapLayer::setOffset(const sf::Vector2f& offset)
 	{
 		for( auto& t : tiles)

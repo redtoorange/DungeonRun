@@ -11,6 +11,8 @@ namespace Engine
 {
 	class TileSetTile;
 
+	//	Represents a single Tile within a TileMapLayer.  This Tile can contain information
+	//	loaded in from the TMX file including a TileSetTile ID.
 	class TiledMapTile
 	{
 	public:
@@ -19,14 +21,19 @@ namespace Engine
 		TiledMapTile(const TiledMapTile& other);
 
 		~TiledMapTile();
+		
+		//	Draw this Tile's Sprite
 		void draw(sf::RenderWindow& window) ;
+		
+		//	Init the Tile's position and TileSetTile information
 		void initialize(const sf::Vector2f& pos, TileSetTile* ts, const sf::Vector2f& offset = { 0, 0 });
 
-
+	
 		TileSetTile* const& getTileSetTile() const;
 		const sf::Vector2f& getPosition() const;
 		const sf::Sprite& getSprite() const;
 
+		//	Adjust the position of the Sprite, not the Tile's position within the layer
 		void setOffset(const sf::Vector2f& offset);
 
 	private:

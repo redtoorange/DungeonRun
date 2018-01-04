@@ -3,6 +3,7 @@
 
 namespace Engine
 {
+	//******************************************************************
 	Map::Map(int width, int height, float xOffset, float yOffset) 
 	: width(width), height(height), xOffset(xOffset), yOffset(yOffset)
 	{
@@ -18,7 +19,7 @@ namespace Engine
 		}
 	}
 
-
+	//******************************************************************
 	MapTile* Map::getTileByPos(float x, float y)
 	{
 		for (int i = 0; i < width; i++)

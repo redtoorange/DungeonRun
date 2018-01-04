@@ -22,6 +22,7 @@ namespace Engine
 		}
 	}
 
+	//----------------------------------------------------------------------------------
 	TileSet& TileSet::operator=(const TileSet& other)
 	{
 #if DEBUG>0
@@ -45,13 +46,13 @@ namespace Engine
 		return *this;
 	}
 
+	//----------------------------------------------------------------------------------
 	sf::Texture* TileSet::getTexture()
 	{
 		return &sourceImage;
 	}
 
-
-
+	//----------------------------------------------------------------------------------
 	void TileSet::logInfo() const
 	{
 		std::cout << "name: " << name << std::endl;
@@ -69,58 +70,20 @@ namespace Engine
 		std::cout << name << " contains " << tiles.size() << " tiles" << std::endl;
 	}
 
-	void TileSet::parseTileSet(const std::string& path, XMLElement* tileSet)
+	void TileSet::createTileSetTiles()
 	{
-		name = tileSet->Attribute("source");
-		firstID = tileSet->IntAttribute("firstgid");
-
-		std::string file;
-		file.append(path);
-		file.append(name);
-
-		XMLDocument doc;
-		XMLError error = doc.LoadFile(file.c_str());
-		if (error != XML_SUCCESS)
-		{
-			std::cout << "Error Loading TileSet <" << file << ">" << std::endl;
-			return;
-		}
-
-		XMLElement* tileset = doc.FirstChildElement("tileset");
-		tileWidth = tileset->IntAttribute("tilewidth");
-		tileHeight = tileset->IntAttribute("tileheight");
-		spacing = tileset->IntAttribute("spacing", 0);
-		margin = tileset->IntAttribute("margin", 0);
-		count = tileset->IntAttribute("tilecount");
-		columns = tileset->IntAttribute("columns");
-
-		XMLElement* image = tileset->FirstChildElement("image");
-
-		file = path;
-		file.append(image->Attribute("source"));
-		sourceImage.loadFromFile(file);
-	//	sourceImage.setSmooth(false);
-		texWidth = image->IntAttribute("width");
-		textHeight = image->IntAttribute("height");
-
 		int x = 0;
 		int y = 0;
 
 		for (int gid = 0; gid < count; gid++)
 		{
-	//		tiles.emplace_back( this, sf::IntRect(
-	//				x * (tileWidth + spacing * 2) + margin,
-	//				y * (tileHeight + spacing * 2) + margin,
-	//				tileWidth, 
-	//				tileHeight
-	//		) );
+			auto rect = sf::IntRect(
+				            /* xPos */ x * (tileWidth + spacing ) + margin,
+							/* yPos */ y * (tileHeight + spacing ) + margin,
+							/* w, h */ tileWidth, tileHeight
+			);
 
-			tiles.emplace_back(this, sf::IntRect(
-				x * (tileWidth + spacing ) + margin,
-				y * (tileHeight + spacing ) + margin,
-				tileWidth,
-				tileHeight
-			));
+			tiles.emplace_back(this, rect);
 
 			x++;
 			if (x >= columns)
@@ -129,16 +92,48 @@ namespace Engine
 				y++;
 			}
 		}
-
 	}
 
+	//----------------------------------------------------------------------------------
+	void TileSet::parseTileSet(const std::string& path, XMLElement* tileSet)
+	{
+		name = tileSet->Attribute("source");
+		firstID = tileSet->IntAttribute("firstgid");
+
+		//	Attempt to load the TileSet file from disk
+		XMLDocument doc;
+		if (doc.LoadFile((path + name).c_str()) != XML_SUCCESS)
+		{
+			std::cout << "Error Loading TileSet <" << (path + name) << ">" << std::endl;
+			return;
+		}
+
+		//	Parse the TileSet data
+		XMLElement* tileset = doc.FirstChildElement("tileset");
+		tileWidth = tileset->IntAttribute("tilewidth");
+		tileHeight = tileset->IntAttribute("tileheight");
+		spacing = tileset->IntAttribute("spacing", 0);
+		margin = tileset->IntAttribute("margin", 0);
+		count = tileset->IntAttribute("tilecount");
+		columns = tileset->IntAttribute("columns");
+
+
+		//	Load in the Source Texture
+		XMLElement* image = tileset->FirstChildElement("image");
+		sourceImage.loadFromFile(path + image->Attribute("source"));
+		texWidth = image->IntAttribute("width");
+		textHeight = image->IntAttribute("height");
+
+		createTileSetTiles();
+	}
+
+	//----------------------------------------------------------------------------------
 	TileSetTile* TileSet::getTile( int gid)
 	{
 		return &tiles[gid - firstID ];
 	}
 
-
-
+	//----------------------------------------------------------------------------------
 	bool TileSet::containsID(int gid) const
 	{
 		return gid >= firstID || gid < firstID + count;
